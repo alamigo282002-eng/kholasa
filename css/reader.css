@@ -1,0 +1,531 @@
+/* ==========================================================================
+   KHULASA APP - 3-PAGE INTERACTIVE READER STYLES & AUDIO BAR
+   ========================================================================== */
+
+.reader-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--md-sys-color-background);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: transform 0.35s var(--md-sys-motion-easing-emphasized-decelerate),
+              opacity 0.25s ease,
+              visibility 0.25s ease;
+  overflow: hidden;
+}
+
+.reader-screen.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Reader Top App Bar */
+.reader-app-bar {
+  background-color: var(--md-sys-color-surface-container);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  min-height: 56px;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  z-index: 10;
+}
+
+.reader-book-meta {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 60%;
+  overflow: hidden;
+}
+.reader-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.reader-author {
+  font-size: 11px;
+  color: var(--md-sys-color-outline);
+}
+
+.reader-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 3-Page Step Indicator Bar (M3 Segmented Progress Indicator) */
+.reader-progress-track {
+  background-color: var(--md-sys-color-surface-container-high);
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.page-step-pill {
+  flex: 1;
+  height: 6px;
+  background-color: var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-full);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+.page-step-pill.active {
+  background-color: var(--md-sys-color-primary);
+  height: 8px;
+}
+.page-step-pill.completed {
+  background-color: var(--md-sys-color-secondary);
+}
+
+.page-indicator-text {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+  white-space: nowrap;
+}
+
+/* Main Reader Viewport & Swiper */
+.reader-viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.reader-slider {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.35s var(--md-sys-motion-easing-emphasized-decelerate);
+}
+
+.reader-page {
+  width: 33.3333%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 24px 20px 140px; /* Space for bottom nav & audio bar */
+  font-family: var(--md-ref-font-reader);
+  font-size: var(--reader-font-size);
+  line-height: var(--reader-line-height);
+  color: var(--md-sys-color-on-surface);
+}
+
+.reader-page-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Page Header Card */
+.page-badge-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  padding: 4px 12px;
+  border-radius: var(--md-sys-shape-corner-full);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.page-headline {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--md-sys-color-primary);
+  margin-bottom: 16px;
+  line-height: 1.35;
+}
+
+/* Reader Typography & Content Elements */
+.reader-lead {
+  font-size: 1.05em;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: 16px;
+}
+
+.reader-paragraph {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.reader-highlight-box {
+  background-color: var(--md-sys-color-surface-container-high);
+  border-right: 4px solid var(--md-sys-color-primary);
+  border-radius: var(--md-sys-shape-corner-m);
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+.reader-highlight-box .box-title {
+  font-size: 0.9em;
+  font-weight: 700;
+  color: var(--md-sys-color-primary);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Key Takeaway Bullet List */
+.takeaways-card {
+  background: linear-gradient(135deg, var(--md-sys-color-surface-container) 0%, var(--md-sys-color-surface-container-high) 100%);
+  border-radius: var(--md-sys-shape-corner-l);
+  padding: 18px;
+  margin: 24px 0;
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+.takeaways-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--md-sys-color-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.takeaway-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.92em;
+  line-height: 1.6;
+}
+.takeaway-item:last-child {
+  margin-bottom: 0;
+}
+.takeaway-icon {
+  color: var(--md-sys-color-primary);
+  font-size: 18px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* Quote in page */
+.page-quote-block {
+  margin: 24px 0;
+  padding: 16px 20px;
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  border-radius: var(--md-sys-shape-corner-m);
+  font-style: italic;
+  font-size: 0.95em;
+  line-height: 1.7;
+  position: relative;
+}
+
+/* Highlightable text marker */
+.highlight-mark {
+  background-color: rgba(255, 212, 59, 0.4);
+  border-radius: 2px;
+  padding: 1px 2px;
+  cursor: pointer;
+}
+[data-theme="dark"] .highlight-mark {
+  background-color: rgba(245, 159, 0, 0.35);
+  color: #ffe066;
+}
+
+/* Text Selection Popup Toolbar */
+.text-selection-toolbar {
+  position: absolute;
+  background-color: var(--md-sys-color-inverse-surface);
+  color: var(--md-sys-color-inverse-on-surface);
+  border-radius: var(--md-sys-shape-corner-full);
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--md-sys-elevation-3);
+  z-index: 600;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+}
+.text-selection-toolbar.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.sel-tool-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: var(--md-sys-shape-corner-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.sel-tool-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Page 3 Completion Banner */
+.completion-celebration {
+  background: linear-gradient(135deg, var(--md-sys-color-primary-container), var(--md-sys-color-tertiary-container));
+  border-radius: var(--md-sys-shape-corner-xl);
+  padding: 24px 20px;
+  text-align: center;
+  margin-top: 30px;
+  box-shadow: var(--md-sys-elevation-1);
+}
+.celebration-icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 8px;
+}
+.celebration-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--md-sys-color-on-primary-container);
+  margin-bottom: 6px;
+}
+.celebration-desc {
+  font-size: 13px;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-bottom: 16px;
+}
+.celebration-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   FLOATING AUDIO NARRATION PLAYER BAR (Web Speech TTS)
+   ========================================================================== */
+.floating-audio-bar {
+  position: fixed;
+  bottom: 68px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 600px;
+  background-color: var(--md-sys-color-surface-container-highest);
+  color: var(--md-sys-color-on-surface);
+  border-radius: var(--md-sys-shape-corner-full);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--md-sys-elevation-3);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  z-index: 520;
+  transition: all 0.3s ease;
+}
+.floating-audio-bar.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(30px);
+}
+
+.audio-bar-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  max-width: 45%;
+}
+
+.audio-wave-anim {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 18px;
+}
+.audio-wave-bar {
+  width: 3px;
+  height: 6px;
+  background-color: var(--md-sys-color-primary);
+  border-radius: 2px;
+  transition: height 0.2s ease;
+}
+.floating-audio-bar.playing .audio-wave-bar:nth-child(1) { animation: wave 0.8s infinite ease-in-out alternate; }
+.floating-audio-bar.playing .audio-wave-bar:nth-child(2) { animation: wave 1.2s infinite ease-in-out 0.2s alternate; }
+.floating-audio-bar.playing .audio-wave-bar:nth-child(3) { animation: wave 0.9s infinite ease-in-out 0.4s alternate; }
+.floating-audio-bar.playing .audio-wave-bar:nth-child(4) { animation: wave 1.1s infinite ease-in-out 0.1s alternate; }
+
+@keyframes wave {
+  0% { height: 4px; }
+  100% { height: 18px; }
+}
+
+.audio-text-label {
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.audio-play-fab {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--md-sys-elevation-1);
+  transition: transform 0.15s;
+}
+.audio-play-fab:active {
+  transform: scale(0.92);
+}
+
+.audio-speed-btn {
+  background: transparent;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-full);
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+  min-width: 38px;
+  text-align: center;
+}
+
+.audio-skip-btn, .audio-close-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.audio-skip-btn:hover, .audio-close-btn:hover {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* ==========================================================================
+   READER BOTTOM NAVIGATION (PREV / NEXT PAGE BAR)
+   ========================================================================== */
+.reader-bottom-nav {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--md-sys-color-surface-container);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  z-index: 510;
+}
+
+.reader-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--md-sys-shape-corner-full);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.reader-nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.reader-nav-btn.primary {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+.reader-nav-btn.primary:hover {
+  filter: brightness(1.05);
+}
+.reader-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Reading Display Settings Sheet */
+.settings-control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+.settings-control-row:last-child {
+  border-bottom: none;
+}
+.control-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+}
+
+.font-size-adjuster {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--md-sys-color-surface-container);
+  border-radius: var(--md-sys-shape-corner-full);
+  padding: 4px 8px;
+}
+.size-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--md-sys-color-primary);
+  font-size: 16px;
+  font-weight: bold;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.size-val {
+  font-size: 13px;
+  font-weight: 600;
+}

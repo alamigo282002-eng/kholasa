@@ -1,0 +1,46 @@
+# Flutter & Android local project (Keep private locally, only landing page on GitHub)
+/android/
+/lib/
+/test/
+/admin/
+/build/
+.dart_tool/
+.idea/
+*.iml
+.metadata
+.flutter-plugins-dependencies
+pubspec.yaml
+pubspec.lock
+analysis_options.yaml
+
+# Firebase & State Documentation
+FIREBASE_SETUP.md
+PROJECT_CURRENT_STATE.md
+
+# Large Binaries & Temporary Scripts
+*.apk
+run_stress_tests.ps1
+server.ps1
+prototype_designs.html
+
+# Local Test Screenshots in root
+home.png
+library_published.png
+library_scroll.png
+library_tab.png
+page2.png
+page2_fixed.png
+phone_screen_test.png
+reader.png
+screen.png
+stress_final.png
+stress_final_loaded.png
+swipe.png
+think_reader.png
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store

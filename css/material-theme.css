@@ -1,0 +1,291 @@
+/* ==========================================================================
+   MATERIAL DESIGN 3 (MATERIAL YOU) DESIGN SYSTEM TOKENS & DYNAMIC COLOR ENGINE
+   ========================================================================== */
+
+:root {
+  /* Default Seed Color: Royal Sapphire / Material Indigo */
+  --md-seed-primary: #3b5ba9;
+  --md-seed-hue: 226;
+
+  /* Material You Light Scheme (Default) */
+  --md-sys-color-primary: #3b5ba9;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #dae2ff;
+  --md-sys-color-on-primary-container: #001946;
+
+  --md-sys-color-secondary: #585e71;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #dce2f9;
+  --md-sys-color-on-secondary-container: #151b2c;
+
+  --md-sys-color-tertiary: #735572;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #fed7f9;
+  --md-sys-color-on-tertiary-container: #2b122c;
+
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-on-error-container: #410002;
+
+  --md-sys-color-background: #fdfbff;
+  --md-sys-color-on-background: #1a1b1f;
+
+  --md-sys-color-surface: #fdfbff;
+  --md-sys-color-on-surface: #1a1b1f;
+  --md-sys-color-surface-variant: #e1e2ec;
+  --md-sys-color-on-surface-variant: #44474f;
+
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #f7f3f9;
+  --md-sys-color-surface-container: #f1edf3;
+  --md-sys-color-surface-container-high: #ebe7ed;
+  --md-sys-color-surface-container-highest: #e5e1e8;
+
+  --md-sys-color-outline: #757780;
+  --md-sys-color-outline-variant: #c5c6d0;
+
+  --md-sys-color-inverse-surface: #2f3033;
+  --md-sys-color-inverse-on-surface: #f1f0f4;
+  --md-sys-color-inverse-primary: #b1c5ff;
+
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.12);
+  --md-sys-color-scrim: rgba(0, 0, 0, 0.38);
+
+  /* Elevation Shadows (Material 3 Levels) */
+  --md-sys-elevation-0: none;
+  --md-sys-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+  --md-sys-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+  --md-sys-elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+  --md-sys-elevation-4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.30);
+  --md-sys-elevation-5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
+
+  /* Material 3 Corner Radius Tokens */
+  --md-sys-shape-corner-none: 0px;
+  --md-sys-shape-corner-xs: 4px;
+  --md-sys-shape-corner-s: 8px;
+  --md-sys-shape-corner-m: 12px;
+  --md-sys-shape-corner-l: 16px;
+  --md-sys-shape-corner-xl: 28px;
+  --md-sys-shape-corner-full: 9999px;
+
+  /* Material 3 Motion & Curves */
+  --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0.0, 0, 1.0);
+  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1.0);
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0.0, 0, 1.0);
+  --md-sys-motion-duration-short: 150ms;
+  --md-sys-motion-duration-medium: 300ms;
+  --md-sys-motion-duration-long: 500ms;
+
+  /* Typography */
+  --md-ref-font-family: 'Readex Pro', 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --md-ref-font-reader: 'Cairo', 'Readex Pro', sans-serif;
+
+  --md-sys-typescale-display-large: 700 57px/64px var(--md-ref-font-family);
+  --md-sys-typescale-headline-large: 700 32px/40px var(--md-ref-font-family);
+  --md-sys-typescale-headline-medium: 600 28px/36px var(--md-ref-font-family);
+  --md-sys-typescale-headline-small: 600 24px/32px var(--md-ref-font-family);
+  --md-sys-typescale-title-large: 600 22px/28px var(--md-ref-font-family);
+  --md-sys-typescale-title-medium: 600 16px/24px var(--md-ref-font-family);
+  --md-sys-typescale-title-small: 600 14px/20px var(--md-ref-font-family);
+  --md-sys-typescale-body-large: 400 16px/24px var(--md-ref-font-family);
+  --md-sys-typescale-body-medium: 400 14px/20px var(--md-ref-font-family);
+  --md-sys-typescale-body-small: 400 12px/16px var(--md-ref-font-family);
+  --md-sys-typescale-label-large: 500 14px/20px var(--md-ref-font-family);
+  --md-sys-typescale-label-medium: 500 12px/16px var(--md-ref-font-family);
+  --md-sys-typescale-label-small: 500 11px/16px var(--md-ref-font-family);
+
+  /* Reader Custom Variables */
+  --reader-font-size: 18px;
+  --reader-line-height: 1.85;
+}
+
+/* ==========================================================================
+   DARK THEME (Material You Dark Tonal Scheme)
+   ========================================================================== */
+[data-theme="dark"] {
+  --md-sys-color-primary: #b1c5ff;
+  --md-sys-color-on-primary: #002c71;
+  --md-sys-color-primary-container: #1e438f;
+  --md-sys-color-on-primary-container: #dae2ff;
+
+  --md-sys-color-secondary: #c0c6dd;
+  --md-sys-color-on-secondary: #2a3042;
+  --md-sys-color-secondary-container: #404659;
+  --md-sys-color-on-secondary-container: #dce2f9;
+
+  --md-sys-color-tertiary: #e1bce0;
+  --md-sys-color-on-tertiary: #422742;
+  --md-sys-color-tertiary-container: #5a3d59;
+  --md-sys-color-on-tertiary-container: #fed7f9;
+
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-error-container: #93000a;
+  --md-sys-color-on-error-container: #ffdad6;
+
+  --md-sys-color-background: #121316;
+  --md-sys-color-on-background: #e3e2e6;
+
+  --md-sys-color-surface: #121316;
+  --md-sys-color-on-surface: #e3e2e6;
+  --md-sys-color-surface-variant: #44474f;
+  --md-sys-color-on-surface-variant: #c5c6d0;
+
+  --md-sys-color-surface-container-lowest: #0d0e11;
+  --md-sys-color-surface-container-low: #1a1b1f;
+  --md-sys-color-surface-container: #1e1f23;
+  --md-sys-color-surface-container-high: #292a2e;
+  --md-sys-color-surface-container-highest: #333539;
+
+  --md-sys-color-outline: #8f9099;
+  --md-sys-color-outline-variant: #44474f;
+
+  --md-sys-color-inverse-surface: #e3e2e6;
+  --md-sys-color-inverse-on-surface: #1a1b1f;
+  --md-sys-color-inverse-primary: #3b5ba9;
+
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.45);
+  --md-sys-color-scrim: rgba(0, 0, 0, 0.65);
+}
+
+/* ==========================================================================
+   SEPIA THEME (Warm Eye-Care Reader Mode)
+   ========================================================================== */
+[data-theme="sepia"] {
+  --md-sys-color-primary: #855318;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffddb8;
+  --md-sys-color-on-primary-container: #2b1700;
+
+  --md-sys-color-secondary: #705b41;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #fbdebc;
+  --md-sys-color-on-secondary-container: #271905;
+
+  --md-sys-color-background: #fbf0dc;
+  --md-sys-color-on-background: #201a14;
+
+  --md-sys-color-surface: #fbf0dc;
+  --md-sys-color-on-surface: #201a14;
+  --md-sys-color-surface-variant: #eedfcb;
+  --md-sys-color-on-surface-variant: #4f4539;
+
+  --md-sys-color-surface-container-lowest: #fffcf7;
+  --md-sys-color-surface-container-low: #f5ebd6;
+  --md-sys-color-surface-container: #efe3cd;
+  --md-sys-color-surface-container-high: #e9ddc7;
+  --md-sys-color-surface-container-highest: #e3d7c1;
+
+  --md-sys-color-outline: #817567;
+  --md-sys-color-outline-variant: #d3c4b0;
+}
+
+/* ==========================================================================
+   COLOR PRESET PALETTES (Material You Seeds)
+   ========================================================================== */
+
+/* 1. Emerald / Nature Green (تطوير الذات والإنتاجية) */
+[data-palette="emerald"] {
+  --md-seed-primary: #006c4c;
+  --md-sys-color-primary: #006c4c;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #8bf7c7;
+  --md-sys-color-on-primary-container: #002114;
+  --md-sys-color-secondary: #4c6356;
+  --md-sys-color-secondary-container: #ceead7;
+  --md-sys-color-on-secondary-container: #092015;
+}
+[data-theme="dark"][data-palette="emerald"] {
+  --md-sys-color-primary: #6edaa7;
+  --md-sys-color-on-primary: #003825;
+  --md-sys-color-primary-container: #005138;
+  --md-sys-color-on-primary-container: #8bf7c7;
+  --md-sys-color-secondary: #b3ccbc;
+  --md-sys-color-secondary-container: #354c3f;
+  --md-sys-color-on-secondary-container: #ceead7;
+}
+
+/* 2. Amber / Gold (المال والأعمال والاستثمار) */
+[data-palette="amber"] {
+  --md-seed-primary: #8a5100;
+  --md-sys-color-primary: #8a5100;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffdcbe;
+  --md-sys-color-on-primary-container: #2c1600;
+  --md-sys-color-secondary: #715a42;
+  --md-sys-color-secondary-container: #fcdebd;
+  --md-sys-color-on-secondary-container: #281806;
+}
+[data-theme="dark"][data-palette="amber"] {
+  --md-sys-color-primary: #ffb870;
+  --md-sys-color-on-primary: #4a2800;
+  --md-sys-color-primary-container: #693c00;
+  --md-sys-color-on-primary-container: #ffdcbe;
+  --md-sys-color-secondary: #dfc2a3;
+  --md-sys-color-secondary-container: #58432c;
+  --md-sys-color-on-secondary-container: #fcdebd;
+}
+
+/* 3. Rose / Ruby (علم النفس والعلاقات) */
+[data-palette="rose"] {
+  --md-seed-primary: #9b4055;
+  --md-sys-color-primary: #9b4055;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffd9de;
+  --md-sys-color-on-primary-container: #3f0016;
+  --md-sys-color-secondary: #75565c;
+  --md-sys-color-secondary-container: #ffd9df;
+  --md-sys-color-on-secondary-container: #2b151a;
+}
+[data-theme="dark"][data-palette="rose"] {
+  --md-sys-color-primary: #ffb2be;
+  --md-sys-color-on-primary: #5f1029;
+  --md-sys-color-primary-container: #7d283f;
+  --md-sys-color-on-primary-container: #ffd9de;
+  --md-sys-color-secondary: #e5bdc3;
+  --md-sys-color-secondary-container: #5c3e44;
+  --md-sys-color-on-secondary-container: #ffd9df;
+}
+
+/* 4. Violet / Deep Purple (الفكر والفلسفة) */
+[data-palette="violet"] {
+  --md-seed-primary: #6c4ea2;
+  --md-sys-color-primary: #6c4ea2;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ebdcff;
+  --md-sys-color-on-primary-container: #260058;
+  --md-sys-color-secondary: #635b70;
+  --md-sys-color-secondary-container: #e9def8;
+  --md-sys-color-on-secondary-container: #1f182b;
+}
+[data-theme="dark"][data-palette="violet"] {
+  --md-sys-color-primary: #d4bbff;
+  --md-sys-color-on-primary: #3d1c71;
+  --md-sys-color-primary-container: #543589;
+  --md-sys-color-on-primary-container: #ebdcff;
+  --md-sys-color-secondary: #cdc2db;
+  --md-sys-color-secondary-container: #4b4458;
+  --md-sys-color-on-secondary-container: #e9def8;
+}
+
+/* 5. Ocean / Cyan (الريادة والتكنولوجيا والابتكار) */
+[data-palette="ocean"] {
+  --md-seed-primary: #006877;
+  --md-sys-color-primary: #006877;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #a2eeff;
+  --md-sys-color-on-primary-container: #001f25;
+  --md-sys-color-secondary: #4b6268;
+  --md-sys-color-secondary-container: #cee7ee;
+  --md-sys-color-on-secondary-container: #051f24;
+}
+[data-theme="dark"][data-palette="ocean"] {
+  --md-sys-color-primary: #53d7ef;
+  --md-sys-color-on-primary: #00363f;
+  --md-sys-color-primary-container: #004e5a;
+  --md-sys-color-on-primary-container: #a2eeff;
+  --md-sys-color-secondary: #b2cbd2;
+  --md-sys-color-secondary-container: #334b50;
+  --md-sys-color-on-secondary-container: #cee7ee;
+}

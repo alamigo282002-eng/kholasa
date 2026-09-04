@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="m3Grad192" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b5ba9" />
+      <stop offset="100%" stop-color="#735572" />
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="48" fill="url(#m3Grad192)" />
+  <rect x="36" y="32" width="120" height="130" rx="12" fill="#ffffff" />
+  <text x="96" y="105" font-family="'Cairo', 'Readex Pro', sans-serif" font-size="64" font-weight="900" fill="#3b5ba9" text-anchor="middle" dominant-baseline="middle">خـ</text>
+  <circle cx="76" cy="140" r="4" fill="#3b5ba9" />
+  <circle cx="96" cy="140" r="4" fill="#735572" />
+  <circle cx="116" cy="140" r="4" fill="#d9480f" />
+</svg>

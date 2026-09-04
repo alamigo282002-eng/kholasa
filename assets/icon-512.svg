@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="m3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b5ba9" />
+      <stop offset="100%" stop-color="#735572" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+  <!-- Background Squircle -->
+  <rect width="512" height="512" rx="128" fill="url(#m3Grad)" />
+  
+  <!-- Book & 3-Page Stack Graphic -->
+  <g transform="translate(106, 116)" filter="url(#shadow)">
+    <!-- Page 3 (Back) -->
+    <rect x="36" y="0" width="228" height="280" rx="18" fill="#dae2ff" opacity="0.6" transform="rotate(8, 150, 140)" />
+    <!-- Page 2 (Middle) -->
+    <rect x="18" y="0" width="228" height="280" rx="18" fill="#fed7f9" opacity="0.8" transform="rotate(4, 132, 140)" />
+    <!-- Page 1 (Front) -->
+    <rect x="0" y="0" width="228" height="280" rx="18" fill="#ffffff" />
+    
+    <!-- Arabic Calligraphy / Letter Kh (خـ) -->
+    <text x="114" y="160" font-family="'Cairo', 'Readex Pro', sans-serif" font-size="110" font-weight="900" fill="#3b5ba9" text-anchor="middle" dominant-baseline="middle">خـ</text>
+    
+    <!-- 3 Dot Dots Indicator -->
+    <circle cx="84" cy="235" r="8" fill="#3b5ba9" />
+    <circle cx="114" cy="235" r="8" fill="#735572" />
+    <circle cx="144" cy="235" r="8" fill="#d9480f" />
+  </g>
+</svg>
