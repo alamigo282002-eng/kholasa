@@ -24,6 +24,12 @@ run_stress_tests.ps1
 server.ps1
 prototype_designs.html
 
+# Web App & PWA (keep local, removed from GitHub)
+app.html
+manifest.json
+/css/
+/js/
+
 # Local Test Screenshots in root
 home.png
 library_published.png
