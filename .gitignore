@@ -19,6 +19,7 @@ PROJECT_CURRENT_STATE.md
 
 # Large Binaries & Temporary Scripts
 *.apk
+!khulasa.apk
 run_stress_tests.ps1
 server.ps1
 prototype_designs.html
