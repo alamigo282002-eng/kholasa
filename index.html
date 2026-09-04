@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خُـلاصة • كتاب كل يوم في 5 دقائق</title>
+  <title>خُـلاصة • استثمر 5 دقائق في عقلك</title>
   
   <!-- SEO & Social Sharing -->
   <meta name="description" content="تطبيق خُـلاصة: ملخصات مكثفة لأشهر أمهات الكتب العالمية في 5 صفحات تطبيقية مع قارئ صوتي ذكي بتصميم Zen الهادئ. متاح للتحميل المباشر بصيغة APK لأندرويد.">
   <meta name="theme-color" content="#070a10">
   
   <meta property="og:type" content="website">
-  <meta property="og:title" content="خُـلاصة • كتاب كل يوم في 5 دقائق">
+  <meta property="og:title" content="خُـلاصة • استثمر 5 دقائق في عقلك">
   <meta property="og:description" content="اقرأ واستمع لأقوى الكتب العالمية في 5 صفحات مركزة وقارئ صوتي متطور.">
   <meta property="og:image" content="assets/icon-512.png">
   
@@ -22,7 +22,7 @@
   <!-- Google Fonts: Cairo & Readex Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Google Material Symbols -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -31,54 +31,73 @@
   <link rel="stylesheet" href="landing.css">
   
   <style>
-    /* Ultra-Clean Minimal Zen Styles */
-    .hero-centered {
+    /* Fullscreen Zen Minimal Landing Page */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    
+    /* Navbar with Logo on Right */
+    .navbar-minimal {
+      width: 100%;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(7, 10, 16, 0.7);
+    }
+    
+    .nav-inner-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* Aligns to right in RTL */
+    }
+    
+    .hero-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    
+    .hero-content {
       text-align: center;
       max-width: 820px;
-      margin: 70px auto 60px auto;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     
-    .zen-quote {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 24px;
-      background: rgba(16, 185, 129, 0.08);
-      border: 1px solid rgba(16, 185, 129, 0.22);
-      border-radius: 99px;
-      color: #e2e8f0;
-      font-size: 15px;
-      font-weight: 500;
-      margin-bottom: 28px;
-      letter-spacing: 0.2px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .zen-quote .quote-symbol {
-      color: var(--gold);
-      font-size: 20px;
-      font-weight: 900;
-      line-height: 1;
-    }
-    
-    .hero-centered .hero-title {
-      font-size: 48px;
+    /* Big Quote as the Headline */
+    .hero-quote-title {
+      font-size: 52px;
       line-height: 1.35;
-      margin-bottom: 22px;
       font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 24px;
       letter-spacing: -0.5px;
+      font-family: var(--font-brand);
     }
     
-    .hero-centered .hero-description {
+    .hero-description {
       font-size: 18px;
       color: var(--text-muted);
       line-height: 1.85;
-      margin-bottom: 38px;
-      max-width: 650px;
+      margin-bottom: 36px;
+      max-width: 660px;
+      font-weight: 400;
     }
     
     .btn-start-now {
@@ -86,209 +105,124 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      padding: 16px 52px;
+      padding: 16px 56px;
       background: linear-gradient(135deg, #10b981 0%, #059669 100%);
       color: #ffffff;
       text-decoration: none;
       border-radius: 99px;
       font-family: var(--font-brand);
       font-weight: 800;
-      font-size: 21px;
-      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+      font-size: 22px;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       cursor: pointer;
     }
     
     .btn-start-now:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 18px 45px rgba(16, 185, 129, 0.55);
+      box-shadow: 0 18px 45px rgba(16, 185, 129, 0.6);
       background: linear-gradient(135deg, #34d399 0%, #059669 100%);
     }
     
     .btn-start-now .material-symbols-rounded {
-      font-size: 24px;
+      font-size: 26px;
       transition: transform 0.2s ease;
     }
     
     .btn-start-now:hover .material-symbols-rounded {
-      transform: translateX(-4px);
+      transform: translateY(2px);
     }
     
     .download-subnote {
       margin-top: 14px;
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--text-dim);
       display: flex;
       align-items: center;
       gap: 6px;
     }
-
-    .minimal-features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 50px;
-    }
     
-    .minimal-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 30px 24px;
-      text-align: right;
-      transition: all 0.3s ease;
-    }
-    
-    .minimal-card:hover {
-      border-color: var(--border-active);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    }
-    
-    .minimal-card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
+    .footer-minimal {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--text-dim);
     }
     
     @media (max-width: 768px) {
-      .hero-centered {
-        margin-top: 40px;
-        margin-bottom: 40px;
+      .hero-quote-title {
+        font-size: 34px;
       }
-      .hero-centered .hero-title {
-        font-size: 32px;
-      }
-      .hero-centered .hero-description {
+      .hero-description {
         font-size: 16px;
+        padding: 0 10px;
       }
       .btn-start-now {
         width: 100%;
-        padding: 16px 28px;
-        font-size: 19px;
+        max-width: 320px;
+        padding: 16px 24px;
+        font-size: 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- ================= MINIMAL BRAND HEADER ================= -->
-  <header class="navbar" style="border-bottom: 1px solid var(--border);">
-    <div class="container nav-inner" style="justify-content: center;">
-      <a href="#" class="brand-logo-group">
-        <div class="brand-badge-icon">خـ</div>
-        <div>
-          <div class="brand-name">خُـلاصة</div>
-          <div class="brand-tagline">كتاب كل يوم في 5 دقائق</div>
-        </div>
-      </a>
-    </div>
-  </header>
+  <div class="page-wrapper">
+    
+    <!-- ================= NAVBAR (LOGO ON RIGHT) ================= -->
+    <header class="navbar-minimal">
+      <div class="container nav-inner-right">
+        <a href="#" class="brand-logo-group">
+          <div class="brand-badge-icon">خـ</div>
+          <div>
+            <div class="brand-name">خُـلاصة</div>
+            <div class="brand-tagline">كتاب كل يوم في 5 دقائق</div>
+          </div>
+        </a>
+      </div>
+    </header>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section class="hero-section" style="padding: 20px 0 60px 0;">
-    <div class="container">
-      <div class="hero-centered">
+    <!-- ================= HERO SECTION (ONLY THIS IN THE PAGE) ================= -->
+    <main class="hero-container">
+      <div class="hero-content">
         
-        <!-- Top Quote (اقتباس بسيط في الأعلى) -->
-        <div class="zen-quote">
-          <span class="quote-symbol">«</span>
-          <span>استثمر 5 دقائق كل يوم في عقلك.. وسترى أثرها في حياتك</span>
-          <span class="quote-symbol">»</span>
-        </div>
-
-        <!-- Main Title -->
-        <h1 class="hero-title">
-          حوّل أمهات الكتب العالمية إلى <br>
-          <span class="gradient-text">عادات ونتائج يومية</span> في 5 دقائق بس! ☕
+        <!-- Big Quote as Headline (الاقتباس بخط كبير مكان جملة أمهات الكتب) -->
+        <h1 class="hero-quote-title">
+          « استثمر 5 دقائق كل يوم في عقلك.. <br>
+          <span class="gradient-text">وسترى أثرها في حياتك</span> »
         </h1>
 
-        <!-- Short Description (شرح فكرة التطبيق بطريقة مختصرة) -->
+        <!-- Concise Description (شرح فكرة التطبيق باختصار) -->
         <p class="hero-description">
           تطبيق <strong>خُـلاصة</strong> يقدّم لك زبدة الفكر الإنساني في تطوير الذات، المال، الإنتاجية، وعلم النفس؛ ملخصة بدقة في 5 صفحات مركزة مع قارئ صوتي ذكي يريح عينيك وعقلك.
         </p>
 
         <!-- Start Now Button (ابدأ الآن) -->
-        <a href="khulasa.apk" class="btn-start-now" download title="تحميل تطبيق خُـلاصة لأندرويد">
+        <a href="khulasa.apk" class="btn-start-now" download title="تحميل تطبيق خُـلاصة">
           <span>ابدأ الآن</span>
           <span class="material-symbols-rounded">download</span>
         </a>
 
+        <!-- Subtext Hint -->
         <div class="download-subnote">
           <span class="material-symbols-rounded" style="font-size:16px; color:var(--primary);">verified</span>
           <span>تحميل مباشر لتطبيق أندرويد (APK) • مجاني 100%</span>
         </div>
 
       </div>
-    </div>
-  </section>
+    </main>
 
-  <!-- ================= CORE HIGHLIGHTS (3 MINIMAL CARDS) ================= -->
-  <section style="padding: 40px 0 80px 0; border-top: 1px solid var(--border);">
-    <div class="container">
-      <div class="minimal-features-grid">
-        
-        <!-- Card 1 -->
-        <div class="minimal-card">
-          <div class="minimal-card-icon" style="background: rgba(16, 185, 129, 0.12); color: var(--primary);">
-            <span class="material-symbols-rounded">menu_book</span>
-          </div>
-          <h3 style="font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 10px;">هيكل الـ 5 صفحات</h3>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.75;">
-            توزيع منهجي ينقلك من الفكرة الجوهرية والقواعد الحاكمة، إلى التوجيهات العملية وخطة الـ 24 ساعة للتطبيق الفوري.
-          </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="minimal-card">
-          <div class="minimal-card-icon" style="background: rgba(245, 158, 11, 0.12); color: var(--gold);">
-            <span class="material-symbols-rounded">headphones</span>
-          </div>
-          <h3 style="font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 10px;">قارئ صوتي ذكي</h3>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.75;">
-            استمع للملخصات أثناء القيادة أو الرياضة مع تحكم كامل بـ 5 سرعات قراءة وميزة التخطي 10 ثوانٍ.
-          </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="minimal-card">
-          <div class="minimal-card-icon" style="background: rgba(99, 102, 241, 0.12); color: var(--accent);">
-            <span class="material-symbols-rounded">spa</span>
-          </div>
-          <h3 style="font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 10px;">تصميم Zen الهادئ</h3>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.75;">
-            شاشة مريحة خالية من الصناديق الخانقة والمشتتات، تركز فقط على الفكرة والجوهر وتريح عينك.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Bottom Minimal CTA -->
-      <div style="text-align: center; margin-top: 60px;">
-        <a href="khulasa.apk" class="btn-start-now" download>
-          <span>ابدأ الآن</span>
-          <span class="material-symbols-rounded">download</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= MINIMAL FOOTER ================= -->
-  <footer class="footer" style="border-top: 1px solid var(--border); padding: 30px 0; text-align: center;">
-    <div class="container">
-      <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">
-        خُـلاصة • رفيقك اليومي لقراءة واستماع أمهات الكتب في 5 دقائق
-      </div>
-      <div style="font-size: 12px; color: var(--text-dim);">
+    <!-- ================= MINIMAL FOOTER ================= -->
+    <footer class="footer-minimal">
+      <div class="container">
         © 2026 خُـلاصة. جميع الحقوق محفوظة ومفتوحة المصدر.
       </div>
-    </div>
-  </footer>
+    </footer>
+
+  </div>
 
 </body>
 </html>
